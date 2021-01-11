@@ -44,7 +44,7 @@ impl<F: PrimeField> ConstraintSynthesizer<F> for Thumbnail<F> {
 
         if index == 0 {
             cs.enforce(
-                || "x * (y + 2) = z",
+                || "x * 1 = z",
                 |lc| lc + var_inps[self.p as usize],
                 |lc| lc + CS::one(),
                 |lc| lc + var_o,
@@ -79,7 +79,7 @@ fn main() {
 
     let mut rng = thread_rng();
 
-    println!("Running mimc_clinkv2...");
+    println!("Running clinkv2...");
     let m = new_x * new_y;
 
     // println!("Creating KZG10 parameters...");
